@@ -1,0 +1,105 @@
+$primary-color: #000;
+$primary-padding-top: 5px;
+$primary-padding-left: 10px;
+$primary-font-size: 14px;
+$theme-1-bg-color: #007bff;
+$theme-2-bg-color: #dc3545;
+
+
+* {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $primary-font-size;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    background: none;
+    font-size: 1em;
+    color: $primary-color;
+    padding: $primary-padding-top $primary-padding-left;
+    border-radius: 5px;
+    transition: all .2s ease;
+
+    &:hover {
+        color: #0000ff;
+    }
+
+    &:active {
+        color: #ff0000;
+    }
+
+    &--is-disabled,
+    &:disabled {
+        cursor: default;
+        opacity: .6;
+        pointer-events: none;
+    }
+
+    &__text {
+        position: relative;
+    }
+
+    &--theme-1 {
+        color: #fff;
+        background-color: $theme-1-bg-color;
+
+        &:hover {
+            color: #fff;
+            background-color: darken($theme-1-bg-color, 10%);
+        }
+
+        &:active {
+            color: #fff;
+            background-color: darken($theme-1-bg-color, 15%);
+        }
+    }
+
+    &--theme-2 {
+        color: #fff;
+        background-color: $theme-2-bg-color;
+
+        &:hover {
+            color: #fff;
+            background-color: darken($theme-2-bg-color, 10%);
+        }
+
+        &:active {
+            color: #fff;
+            background-color: darken($theme-2-bg-color, 15%);
+        }
+    }
+
+    &--is-small {
+        font-size: 0.8em;
+        padding: $primary-padding-top - 2px $primary-padding-left - 2px;
+    }
+
+    &--is-normall {
+        font-size: 1em;
+        padding: $primary-padding-top $primary-padding-left;
+    }
+
+    &--is-medium {
+        font-size: 1.2em;
+        padding: $primary-padding-top + 1px $primary-padding-left + 2px;
+    }
+
+    &--is-large {
+        font-size: 1.4em;
+        padding: $primary-padding-top + 3px $primary-padding-left + 6px;
+    }
+}
